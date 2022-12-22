@@ -1,16 +1,17 @@
 package io.javabrains.springbootquickstart.courseapi.TopicController;
 
-public class Topics{
+
+public class Topic{
 
     private String id;
     private String description;
     private String name;
 
-    public Topics(){
+    public Topic(){
 
     }
 
-    public Topics(String id,String description,String name){
+    public Topic(String id,String description,String name){
         this.id=id;
         this.description=description;
         this.name=name;
@@ -39,4 +40,5 @@ public class Topics{
     public void setName(String name){
         this.name=name;
     }
+
 }
