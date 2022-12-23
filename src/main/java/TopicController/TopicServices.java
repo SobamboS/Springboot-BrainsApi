@@ -1,6 +1,7 @@
-package io.javabrains.springbootquickstart.courseapi.TopicController;
+package TopicController;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -10,6 +11,9 @@ import java.util.List;
 @Service
 public class TopicServices{
 
+    @Autowired
+    private TopicRepository topicRepository;
+
 
    private List<Topic> topics=  new ArrayList<>(Arrays.asList(
                 new Topic("Java", "Spring Framework", "Spring Framework Description"),
@@ -18,6 +22,9 @@ public class TopicServices{
         ));
 
    public List<Topic> getAllTopics(){
+       List<Topic> topics = new ArrayList<>();
+       topicRepository.findAll()
+               .forEach(topics::add);
        return topics;
    }
 
@@ -27,7 +34,8 @@ public class TopicServices{
    }
 
     public void addTopic(Topic topic){
-       topics.add(topic);
+topicRepository.save(topic);
+      // topics.add(topic);
     }
 
     public void updateTopic(String id,Topic topic){

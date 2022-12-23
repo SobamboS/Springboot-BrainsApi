@@ -1,4 +1,4 @@
-package io.javabrains.springbootquickstart.courseapi.TopicController;
+package TopicController;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
