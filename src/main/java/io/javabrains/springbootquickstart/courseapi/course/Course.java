@@ -1,23 +1,21 @@
-package TopicController;
+package io.javabrains.springbootquickstart.courseapi.course;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class Topic{
+public class Course{
     @Id
 //    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private String id;
     private String description;
     private String name;
 
-    public Topic(){
+    public Course(){
 
     }
 
-    public Topic(String id,String description,String name){
+    public Course(String id,String description,String name){
         this.id=id;
         this.description=description;
         this.name=name;
